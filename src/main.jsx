@@ -10,7 +10,10 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Home from './pages/Home.jsx'
+import Signin from './pages/SignIn.jsx'
 import ContextProvider from './provider/ContextProvider.jsx'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const router = createBrowserRouter([
@@ -20,16 +23,19 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "/home",
+        path: "/",
         element: <Home />,
+      },
+      {
+        path: "/signin",
+        element: <Signin />
       }
     ]
   },
 ]);
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <ContextProvider>
-    <React.StrictMode>
+    <ContextProvider>
       <RouterProvider router={router} />
-    </React.StrictMode>
-  </ContextProvider>
+      <ToastContainer />
+    </ContextProvider>
 )

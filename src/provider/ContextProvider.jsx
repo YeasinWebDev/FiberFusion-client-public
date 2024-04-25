@@ -5,7 +5,7 @@ import { auth } from '../firebaseCofig';
 export const AuthContext = createContext(null)
 function ContextProvider({ children }) {
 
-    const [dark, setDark] = useState(false)
+    const [dark, setDark] = useState(true)
     const [user, setUser] = useState(null)
     const [loading, setloading] = useState(true)
     const logInByGoogle = () => {
@@ -22,7 +22,7 @@ function ContextProvider({ children }) {
 
     const createUser = (email, pass) => {
         // setloading(true);
-        return  createUserWithEmailAndPassword(auth, email, pass);
+        return createUserWithEmailAndPassword(auth, email, pass);
     };
 
     const signIn = (email, pass) => {
@@ -51,7 +51,7 @@ function ContextProvider({ children }) {
 
 
 
-    const authinfo = { user, setUser, createUser, signIn, LogOut, logInByGoogle, loading, setloading, logInByGithub,dark ,setDark }
+    const authinfo = { user, setUser, createUser, signIn, LogOut, logInByGoogle, loading, setloading, logInByGithub, dark, setDark }
     return (
         <AuthContext.Provider value={authinfo}>
             {children}
