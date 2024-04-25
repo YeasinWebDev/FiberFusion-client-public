@@ -5,6 +5,7 @@ import { auth } from '../firebaseCofig';
 export const AuthContext = createContext(null)
 function ContextProvider({ children }) {
 
+    const [dark, setDark] = useState(false)
     const [user, setUser] = useState(null)
     const [loading, setloading] = useState(true)
     const logInByGoogle = () => {
@@ -50,7 +51,7 @@ function ContextProvider({ children }) {
 
 
 
-    const authinfo = { user, setUser, createUser, signIn, LogOut, logInByGoogle, loading, setloading, logInByGithub }
+    const authinfo = { user, setUser, createUser, signIn, LogOut, logInByGoogle, loading, setloading, logInByGithub,dark ,setDark }
     return (
         <AuthContext.Provider value={authinfo}>
             {children}
