@@ -61,7 +61,7 @@ function Nav() {
                                 <img className='w-full h-full rounded-full object-cover' src={user?.photoURL
                                 } data-tooltip-id="img" data-tooltip-content={user?.displayName} />
                             </div>
-                            <button onClick={logoutClick} className="md:p-4 p-3 font-semibold text-white rounded-xl bg-gradient-to-r from-[#2a6c40] to-[#26a550]">LogOut</button>
+                            <button onClick={logoutClick} className="md:p-4 p-3 font-semibold text-white rounded-xl bg-gradient-to-r from-[#B18B5E] to-[#856034]">LogOut</button>
                         </div>
                     )
                         :
