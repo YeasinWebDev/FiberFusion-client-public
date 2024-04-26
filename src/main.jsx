@@ -14,6 +14,7 @@ import Signin from './pages/SignIn.jsx'
 import ContextProvider from './provider/ContextProvider.jsx'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Signup from './pages/Signup.jsx'
 
 
 const router = createBrowserRouter([
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: "/signin",
         element: <Signin />
+      },
+      {
+        path: "/signup",
+        element: <Signup />
       }
     ]
   },
