@@ -15,6 +15,10 @@ import ContextProvider from './provider/ContextProvider.jsx'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Signup from './pages/Signup.jsx'
+import AllArt from './pages/AllArt.jsx'
+import AddCraft from './pages/AddCraft.jsx'
+import PrivateRoute from './PrivateRoute.jsx'
+import MyArt from './pages/MyArt.jsx'
 
 
 const router = createBrowserRouter([
@@ -34,13 +38,25 @@ const router = createBrowserRouter([
       {
         path: "/signup",
         element: <Signup />
+      },
+      {
+        path: '/all-Art',
+        element: <AllArt />
+      },
+      {
+        path: "/addCraft",
+        element: <PrivateRoute><AddCraft /></PrivateRoute>,
+      },
+      {
+        path: "/myArt",
+        element: <PrivateRoute><MyArt /></PrivateRoute>,
       }
     ]
   },
 ]);
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <ContextProvider>
-      <RouterProvider router={router} />
-      <ToastContainer />
-    </ContextProvider>
+  <ContextProvider>
+    <RouterProvider router={router} />
+    <ToastContainer />
+  </ContextProvider>
 )
