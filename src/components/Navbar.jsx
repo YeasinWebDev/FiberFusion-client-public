@@ -10,7 +10,6 @@ import { MdDarkMode } from "react-icons/md";
 
 function Nav() {
     const { user, LogOut, dark, setDark } = useContext(AuthContext)
-    console.log(user)
 
     const logoutClick = () => {
         <Navigator to='/' />

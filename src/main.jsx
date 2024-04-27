@@ -19,6 +19,8 @@ import AllArt from './pages/AllArt.jsx'
 import AddCraft from './pages/AddCraft.jsx'
 import PrivateRoute from './PrivateRoute.jsx'
 import MyArt from './pages/MyArt.jsx'
+import Details from './pages/Details.jsx'
+import Details2 from './pages/Details2.jsx'
 
 
 const router = createBrowserRouter([
@@ -50,6 +52,13 @@ const router = createBrowserRouter([
       {
         path: "/myArt",
         element: <PrivateRoute><MyArt /></PrivateRoute>,
+      },{
+        path:'/details/:id',
+        element: <PrivateRoute><Details /></PrivateRoute>
+      },
+      {
+        path:'/details2/:id',
+        element: <PrivateRoute><Details2 /></PrivateRoute>
       }
     ]
   },

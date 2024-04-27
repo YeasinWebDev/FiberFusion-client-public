@@ -41,7 +41,7 @@ export default function Hero() {
                         <p className='text-white lg:w-[30%] md:w-[50%] px-2 md:px-0 my-3 flex items-center justify-center text-center'>
                             Discover our curated textile artworks, showcasing intricate craftsmanship and vibrant creativity.
                         </p>
-                        <Link to={'/contact'}><button className='md:px-8 md:py-5 p-4 bg-transparent border-2 text-white hover:bg-gradient-to-r from-[#B18B5E] to-[#856034] hover:text-white hover:border-[#B18B5E] rounded-lg flex gap-3 items-center text-xl group transition-all duration-300 mt-8'>
+                        <Link to={'/all-Art'}><button className='md:px-8 md:py-5 p-4 bg-transparent border-2 text-white hover:bg-gradient-to-r from-[#B18B5E] to-[#856034] hover:text-white hover:border-[#B18B5E] rounded-lg flex gap-3 items-center text-xl group transition-all duration-300 mt-8'>
                             Our Art
                             <div className='transition-transform transform-gpu group-hover:rotate-[-45deg]'><MdOutlineArrowForward size={25} /></div>
                         </button></Link>
@@ -53,7 +53,7 @@ export default function Hero() {
                         <p className='text-white lg:w-[30%] md:w-[50%] px-2 md:px-0 my-3 flex items-center justify-center text-center'>
                             Explore handcrafted masterpieces, from elegant quilts to delicate beadwork, celebrating the artistry of textiles.
                         </p>
-                        <Link to={'/contact'}><button className='md:px-8 md:py-5 p-4 bg-transparent border-2 text-white hover:bg-gradient-to-r from-[#B18B5E] to-[#856034] hover:text-white hover:border-[#B18B5E]  rounded-lg flex gap-3 items-center text-xl group transition-all duration-300 mt-8'>
+                        <Link to={'/all-Art'}><button className='md:px-8 md:py-5 p-4 bg-transparent border-2 text-white hover:bg-gradient-to-r from-[#B18B5E] to-[#856034] hover:text-white hover:border-[#B18B5E]  rounded-lg flex gap-3 items-center text-xl group transition-all duration-300 mt-8'>
                             Our Art
                             <div className='transition-transform transform-gpu group-hover:rotate-[-45deg]'><MdOutlineArrowForward size={25} /></div>
                         </button></Link>
@@ -65,7 +65,7 @@ export default function Hero() {
                         <p className='text-white lg:w-[30%] md:w-[50%] px-2 md:px-0 my-3 flex items-center justify-center text-center'>
                             Find inspiration and supplies for your textile arts journey, from DIY kits to expert resources
                         </p>
-                        <Link to={'/contact'}><button className='md:px-8 md:py-5 p-4 bg-transparent border-2 text-white hover:bg-gradient-to-r from-[#B18B5E] to-[#856034] hover:text-white hover:border-[#B18B5E]  rounded-lg flex gap-3 items-center text-xl group transition-all duration-300 mt-8'>
+                        <Link to={'/all-Art'}><button className='md:px-8 md:py-5 p-4 bg-transparent border-2 text-white hover:bg-gradient-to-r from-[#B18B5E] to-[#856034] hover:text-white hover:border-[#B18B5E]  rounded-lg flex gap-3 items-center text-xl group transition-all duration-300 mt-8'>
                             Our Art
                             <div className='transition-transform transform-gpu group-hover:rotate-[-45deg]'><MdOutlineArrowForward size={25} /></div>
                         </button></Link>
