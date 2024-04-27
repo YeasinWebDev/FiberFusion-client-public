@@ -22,8 +22,8 @@ function Details2() {
             <Helmet>
                 <title>Product-Details</title>
             </Helmet>
-            <div className="img md:w-[70vh] px-2 md:px-0 rounded-xl flex items-center">
-                <img className='rounded-xl' src={details.image} alt="" />
+            <div className="img md:w-[70vh] px-2 md:px-0 rounded-xl flex items-center justify-center">
+                <img className='rounded-xl object-cover' src={details.image} alt="" />
             </div>
 
             <div className='flex flex-col xl:mx-[32%]  p-6'>

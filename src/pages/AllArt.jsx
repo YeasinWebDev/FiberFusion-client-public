@@ -16,14 +16,14 @@ function AllArt() {
   console.log(allData)
   return (
     <div>
-      <div className={`${dark ? 'text-white' : 'text-black'}`}>
+      <div className={`${dark ? 'text-white' : 'text-black'} h-full`}>
         <h1 className='text-4xl font-semibold mb-5 text-[#B18B5E] flex items-center justify-center py-10'>All Art And Craft</h1>
-        <div className='px-20 flex gap-10'>
+        <div className='md:px-20 md:justify-start justify-center flex flex-wrap gap-10'>
           {allData.map(item => {
             return (
-              <div className='flex flex-col md:flex-row gap-10 mb-5 w-fit border-2 rounded-xl px-10 py-6  items-center '>
-                <img src={item.image} className='w-40 h-40 rounded-xl' />
-                <div className='border-l-2 pl-5 border-dashed'>
+              <div className='flex flex-col md:flex-row flex-wrap gap-10 mb-5 w-fit border-2 rounded-xl md:px-10 px-8 py-10  items-center '>
+                <img src={item.image} className='w-60  rounded-xl' />
+                <div className='md:border-l-2 pl-5 border-dashed'>
                   <h1 className='text-2xl font-semibold mb-2'>{item.item_name}</h1>
                   <h2 className='mb-2'>Subcategory: <span className='font-semibold'>{item.subcategory_name}</span></h2>
                   <h3>Rating: <span className='font-semibold'>{item.rating}</span></h3>

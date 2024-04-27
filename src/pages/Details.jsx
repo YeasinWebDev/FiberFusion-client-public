@@ -2,20 +2,20 @@ import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import 'aos/dist/aos.css';
 import AOS from 'aos';
-import {Helmet} from "react-helmet";
+import { Helmet } from "react-helmet";
 import axios from 'axios';
 import { AuthContext } from '../provider/ContextProvider';
 
 function Details() {
     const { id } = useParams()
     const [details, setdetails] = useState({})
-    const {dark} = useContext(AuthContext)
+    const { dark } = useContext(AuthContext)
 
     useEffect(() => {
         axios.get(`http://localhost:8300/art-1/${id}`)
-         .then(res => {
-            setdetails(res.data)
-          })
+            .then(res => {
+                setdetails(res.data)
+            })
     }, [id])
 
     return (
