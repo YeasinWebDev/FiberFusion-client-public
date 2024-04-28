@@ -1,11 +1,12 @@
 import React, { useContext } from 'react'
 import { AuthContext } from '../provider/ContextProvider'
+import { Fade } from 'react-awesome-reveal'
 
 function Resources() {
     const { dark } = useContext(AuthContext)
     return (
         <div className={`flex flex-col items-center w-full justify-center py-20 ${dark ? "text-white" : "text-black"}`}>
-            <h1 className='flex items-center justify-center text-center text-3xl md:text-4xl font-semibold'>Textile Resources Hub</h1>
+            <h1 className='flex items-center justify-center text-center text-3xl md:text-4xl font-semibold'><Fade cascade duration={200}>Textile Resources Hub</Fade></h1>
             <div className='flex flex-col lg:w-[60%] w-full items-center mt-10 border-2 md:p-10 p-5 rounded-xl '>
                 <h1 className='md:text-3xl text-2xl font-semibold'>Article</h1>
                 <h2 className='md:text-2xl text-xl font-semibold my-4'> "Exploring Shibori Techniques"</h2>

@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import axios from 'axios';
 import Product from './Product';
 import { AuthContext } from '../provider/ContextProvider';
+import { Fade } from 'react-awesome-reveal';
 
 function CraftItems() {
   const [data, setdata] = useState([])
@@ -15,7 +16,7 @@ function CraftItems() {
   return (
     <div className='px-32 flex flex-col justify-center relative'>
       <div className='mt-5 mb-20'>
-        <h1 className={`flex items-center justify-center text-center whitespace-nowrap text-3xl md:text-4xl font-semibold ${dark ? 'text-white' : 'text-black'}`}>Crafty Creations</h1>
+       <h1 className={`flex items-center justify-center text-center whitespace-nowrap text-3xl md:text-4xl font-semibold ${dark ? 'text-white' : 'text-black'}`}><Fade cascade duration={200}> Crafty Creations</Fade></h1>
         {
           loading ?
             <div className="absolute text-black flex items-center w-full pr-10 justify-center">

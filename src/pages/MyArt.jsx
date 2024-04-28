@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import Swal from 'sweetalert2'
 import AOS from 'aos';
 import { toast } from 'react-toastify'
+import { Fade } from 'react-awesome-reveal'
 
 function AllArt() {
   const [allData, setAllData] = useState([])
@@ -39,9 +40,7 @@ function AllArt() {
   }
 
 
-
-
-  const handleDelete = (e, id) => {
+  const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this Art!",
@@ -117,7 +116,7 @@ function AllArt() {
   return (
     <div className='relative min-h-screen w-full '>
       <div className={`${dark ? 'text-white' : 'text-black'} `}>
-        <h1 className='text-4xl font-semibold mb-5 text-[#B18B5E] flex items-center justify-center py-10'>My Art And Craft</h1>
+        <h1 className='text-4xl font-semibold mb-5 text-[#B18B5E] flex items-center justify-center py-10'><Fade cascade duration={200}>My Art And Craft</Fade></h1>
         <div className='flex items-center justify-center flex-col'>
           <h1>Filter Craft by Customization</h1>
           <div className="mb-2 flex items-center gap-3 my-5">

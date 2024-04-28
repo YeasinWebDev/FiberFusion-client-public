@@ -3,6 +3,7 @@ import { Link, Navigate } from 'react-router-dom';
 import { AuthContext } from '../provider/ContextProvider';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { Fade } from 'react-awesome-reveal';
 function AddCraft() {
 
     const { user,dark } = useContext(AuthContext)
@@ -38,8 +39,8 @@ function AddCraft() {
             stock_status
         }
 
-
-     axios.post('http://localhost:8300/art-2', data)
+            // art-2
+     axios.post('http://localhost:8300/subCategory', data)
      .then(res => {
         if(res.data.insertedId){
             toast("Art Data Added successfully")
@@ -53,7 +54,7 @@ function AddCraft() {
     return (
         <div>
             <div className={`flex flex-col items-center justify-center py-20 ${dark ? 'text-white' : 'text-black'}`}>
-                <h2 className='text-4xl font-semibold mb-5 text-[#B18B5E]'>Add New Craft Item</h2>
+                <h2 className='text-4xl font-semibold mb-5 text-[#B18B5E]'><Fade cascade duration={200}>Add New Craft Item</Fade></h2>
                 <form onSubmit={handleAddItem} className='w-full justify-center gap-10 flex relative  flex-wrap'>
                     <div>
                         <input className=' border-2 bg-transparent mb-5 p-2 rounded-lg px-10 py-5' type="text" name='user_name' placeholder='Your Name' defaultValue={user.displayName} />

@@ -21,6 +21,7 @@ import PrivateRoute from './PrivateRoute.jsx'
 import MyArt from './pages/MyArt.jsx'
 import Details from './pages/Details.jsx'
 import Details2 from './pages/Details2.jsx'
+import SubCategoryItem from './pages/SubCategoryItem.jsx'
 
 
 const router = createBrowserRouter([
@@ -59,6 +60,10 @@ const router = createBrowserRouter([
       {
         path:'/details2/:id',
         element: <PrivateRoute><Details2 /></PrivateRoute>
+      },
+      {
+        path:'/subCategoryItem',
+        element: <PrivateRoute><SubCategoryItem /></PrivateRoute>
       }
     ]
   },

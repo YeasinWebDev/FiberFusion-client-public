@@ -3,6 +3,7 @@ import Hero from '../components/Hero'
 import CraftItems from '../components/CraftItems'
 import Artisan from '../components/Artisan'
 import Resources from '../components/Resources'
+import SubCategory from '../components/SubCategory'
 
 function Home() {
   return (
@@ -11,6 +12,7 @@ function Home() {
       <CraftItems/>
       <Artisan/>
       <Resources/>
+      <SubCategory/>
     </div>
   )
 }

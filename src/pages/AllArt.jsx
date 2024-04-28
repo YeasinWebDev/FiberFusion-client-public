@@ -2,10 +2,11 @@ import axios from 'axios'
 import React, { useContext, useEffect, useState } from 'react'
 import { AuthContext } from '../provider/ContextProvider'
 import { Link } from 'react-router-dom'
+import { Fade } from 'react-awesome-reveal'
 
 function AllArt() {
   const [allData, setAllData] = useState([])
-  const { dark } = useContext(AuthContext)
+  const { dark,setDetailsValue } = useContext(AuthContext)
   const [loading, setloading] = useState(true)
   useEffect(() => {
     setloading(true)
@@ -19,7 +20,7 @@ function AllArt() {
   return (
     <div>
       <div className={`${dark ? 'text-white' : 'text-black'} min-h-screen relative`}>
-        <h1 className='text-4xl font-semibold mb-5 text-[#B18B5E] flex items-center justify-center py-10'>All Art And Craft</h1>
+        <h1 className='text-4xl font-semibold mb-5 text-[#B18B5E] flex items-center justify-center py-10'><Fade cascade duration={200}>All Art And Craft</Fade></h1>
         <div className="md:px-20 lg:justify-start justify-center flex flex-wrap gap-10">
           <table className="table">
             {/* head */}
@@ -50,7 +51,7 @@ function AllArt() {
                         <td className='text-xl font-semibold'>{item.rating}</td>
                         <td>
                           <Link to={`/details2/${item._id}`}>
-                            <button className={`btn px-2 border-2 bg-transparent border-[#B18B5E] text-black hover:bg-[#B18B5E] hover:text-white hover:bg-none hover:border-none ${dark ? 'text-white' : 'text-black'}`}>View Details</button>
+                            <button onClick={() => setDetailsValue(false)} className={`btn px-2 border-2 bg-transparent border-[#B18B5E] text-black hover:bg-[#B18B5E] hover:text-white hover:bg-none hover:border-none ${dark ? 'text-white' : 'text-black'}`}>View Details</button>
                           </Link>
                         </td>
                       </tr>

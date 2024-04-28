@@ -9,11 +9,12 @@ import { AuthContext } from '../provider/ContextProvider';
 function Details2() {
     const { id } = useParams()
     const [details, setdetails] = useState({})
-    const {dark} = useContext(AuthContext)
+    const {dark,detailsValue} = useContext(AuthContext)
     useEffect(() => {
-        axios.get(`http://localhost:8300/art-2/${id}`)
+        axios.get(`http://localhost:8300/${detailsValue? 'subCategory' : 'art-2'}/${id}`)
          .then(res => {
             setdetails(res.data)
+            window.scrollTo(0, 0);
           })
     }, [id])
 
@@ -22,7 +23,7 @@ function Details2() {
             <Helmet>
                 <title>Product-Details</title>
             </Helmet>
-            <div className="img md:w-[70vh] px-2 md:px-0 rounded-xl flex items-center justify-center">
+            <div className="img md:w-[40vh] px-2 md:px-0 rounded-xl flex items-center justify-center">
                 <img className='rounded-xl object-cover' src={details.image} alt="" />
             </div>
 
@@ -35,18 +36,18 @@ function Details2() {
                 </p>
                 <div className='flex gap-4 mt-5'>
                     <div>
-                        <h1 className='font-normal text-xl pb-3'>processing Time:</h1>
-                        <h1 className='font-normal text-xl pb-3'>rating:</h1>
-                        <h1 className='font-normal text-xl pb-3'>stock Status:</h1>
-                        <h1 className='font-normal text-xl pb-3'>Price:</h1>
-                        <h1 className='font-normal text-xl pb-3'>customization:</h1>
+                        <h1 className='font-normal text-xl pb-3'>processing Time</h1>
+                        <h1 className='font-normal text-xl pb-3'>rating</h1>
+                        <h1 className='font-normal text-xl pb-3'>stock Status</h1>
+                        <h1 className='font-normal text-xl pb-3'>Price</h1>
+                        <h1 className='font-normal text-xl pb-3'>customization</h1>
                     </div>
                     <div>
-                        <h1 className='font-semibold text-xl pb-3'>"{details.processing_time}"</h1>
-                        <h1 className='font-semibold text-xl pb-3'>"{details.rating}"</h1>
-                        <h1 className='font-semibold text-xl pb-3'>"{details.stock_status}"</h1>
-                        <h1 className='font-semibold text-xl pb-3'>"{details.price}" $</h1>
-                        <h1 className='font-semibold text-xl pb-3'>"{details.customization}"</h1>
+                        <h1 className='font-semibold text-xl pb-3'>: "{details.processing_time}"</h1>
+                        <h1 className='font-semibold text-xl pb-3'>: "{details.rating}"</h1>
+                        <h1 className='font-semibold text-xl pb-3'>: "{details.stock_status}"</h1>
+                        <h1 className='font-semibold text-xl pb-3'>:  {details.price} $</h1>
+                        <h1 className='font-semibold text-xl pb-3'>: "{details.customization}"</h1>
                     </div>
                 </div>
             </div>
