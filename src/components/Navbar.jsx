@@ -16,7 +16,7 @@ function Nav() {
         LogOut()
     }
     return (
-        <div className={`navbar ${dark ? 'bg-[#28282A] text-white border-b-2 py-3' : "bg-[#e6e2e2] text-black py-3"}`}>
+        <div className={`navbar ${dark ? 'bg-[#1A1818] text-white  py-3' : "bg-[#e6e2e2] text-black py-3"}`}>
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -31,7 +31,7 @@ function Nav() {
                 </div>
                 <div className="btn btn-ghost text-xl">
                     <div className='md:w-14 w-6 flex  items-center gap-3'>
-                        <span className='md:text-4xl text-xl font-semibold'>TimberCraft</span>
+                        <span className='md:text-4xl text-xl font-semibold'>FiberFusion</span>
                     </div>
                 </div>
             </div>

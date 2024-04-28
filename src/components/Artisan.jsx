@@ -10,7 +10,6 @@ function Artisan() {
         axios.get('http://localhost:8300/artists')
             .then(res => {
                 setdata(res.data)
-                console.log(res.data)
 
             })
     }, [])
@@ -22,7 +21,7 @@ function Artisan() {
                 {
                     data.map(item => {
                         return (
-                            <div className="card w-96 h-fit rounded-xl shadow-xl">
+                            <div key={item._id} className="card w-96 h-fit rounded-xl shadow-xl">
                                 <figure className="px-10 pt-10">
                                     <img src={item.img} alt="data" className="rounded-xl" />
                                 </figure>
