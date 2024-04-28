@@ -12,7 +12,7 @@ function Product({ data, i }) {
     const { dark } = useContext(AuthContext)
     return (
         <div>
-            <div data-aos="fade-up" data-aos-delay={i * 100} data-aos-anchor-placement="center-bottom" className="card w-96 shadow-xl">
+            <div data-aos="fade-up" data-aos-delay={i * 100} data-aos-anchor-placement="center-bottom" className="card md:w-96 w-80 shadow-xl">
                 <figure className="">
                     <img src={data.image} />
                 </figure>

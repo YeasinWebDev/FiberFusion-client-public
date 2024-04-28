@@ -17,7 +17,7 @@ function Artisan() {
 
     return (
         <div className={`flex flex-col items-center justify-center ${dark ? "text-white" : "text-black"}`}>
-            <h1 className='flex items-center justify-center text-center text-2xl md:text-4xl font-semibold'>Artisan Spotlight</h1>
+            <h1 className='flex items-center justify-center text-center text-3xl md:text-4xl font-semibold'>Artisan Spotlight</h1>
             <div className='flex flex-wrap gap-5 justify-center'>
                 {
                     data.map(item => {

@@ -13,7 +13,7 @@ function CraftItems() {
   return (
     <div className='px-32 flex flex-col justify-center'>
       <div className='mt-5 mb-20'>
-        <h1 className={`flex items-center justify-center text-center text-2xl md:text-4xl font-semibold ${dark ? 'text-white' : 'text-black'}`}>Crafty Creations: Explore Our Selection</h1>
+        <h1 className={`flex items-center justify-center text-center whitespace-nowrap text-3xl md:text-4xl font-semibold ${dark ? 'text-white' : 'text-black'}`}>Crafty Creations</h1>
         <div className='w-full h-fit flex flex-wrap mt-10 gap-8 items-center justify-center'>
           {
             data.map((item, index) => {
