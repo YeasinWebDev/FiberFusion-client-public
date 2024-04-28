@@ -21,7 +21,7 @@ function ContextProvider({ children }) {
     }
 
     const createUser = (email, pass) => {
-        // setloading(true);
+        setloading(true);
         return createUserWithEmailAndPassword(auth, email, pass);
     };
 

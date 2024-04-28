@@ -12,18 +12,34 @@ function AllArt() {
   const [popup, setPopup] = useState(false)
   const { dark, user } = useContext(AuthContext)
   const [load, setLoad] = useState(false)
+  const [filter, setFilter] = useState('')
+  const [loading, setloading] = useState(true)
 
 
   useEffect(() => {
-    axios.get(`http://localhost:8300/art-2?email=${user.email}`)
+    fetchData()
+    AOS.init({ duration: 500, offset: 200, });
+  }, [user.email, load, filter]);
+
+  const fetchData = () => {
+    setloading(true)
+    let url = `http://localhost:8300/art-2?email=${user.email}`
+    if (filter) {
+      url = `http://localhost:8300/art-2?email=${user.email}&filter=${filter}`
+    }
+    axios.get(url)
       .then(res => {
         setAllData(res.data);
+        setloading(false)
       })
       .catch(error => {
         console.error('Error fetching data:', error);
+        setloading(false)
       });
-    AOS.init({ duration: 500, offset: 200, });
-  }, [user.email, load]);
+  }
+
+
+
 
   const handleDelete = (e, id) => {
     Swal.fire({
@@ -52,7 +68,7 @@ function AllArt() {
   }
 
 
-  const getCarftData = (id) => {
+  const updateCarftData = (id) => {
     axios.get(`http://localhost:8300/art-2/${id}`)
       .then(res => {
         setItemData(res.data);
@@ -94,43 +110,56 @@ function AllArt() {
         toast('Updated Successfully')
         setLoad(!load)
         setPopup(false)
+        setloading(false)
       })
   }
-
-
-  // update popup
-
 
   return (
     <div className='relative min-h-screen w-full '>
       <div className={`${dark ? 'text-white' : 'text-black'} `}>
         <h1 className='text-4xl font-semibold mb-5 text-[#B18B5E] flex items-center justify-center py-10'>My Art And Craft</h1>
-        <div className='md:px-20 lg:justify-start justify-center flex flex-wrap gap-10 '>
-          {allData.map(item => {
-            return (
-              <div className='flex flex-col lg:flex-row flex-wrap gap-10 mb-5 w-fit border-2 rounded-xl md:px-10 px-8 py-10  items-center '>
-                <img src={item.image} className='w-60  rounded-xl' />
-                <div className='md:border-l-2 pl-5 border-dashed'>
-                  <h1 className='text-2xl font-semibold mb-2'>{item.item_name}</h1>
-                  <h2 className='mb-2'>Subcategory: <span className='font-semibold'>{item.subcategory_name}</span></h2>
-                  <h3>Rating: <span className='font-semibold'>{item.rating}</span></h3>
-                  <h3 className='mb-2'>Price: <span className='font-semibold'>{item.price}$</span></h3>
-                  <div className='flex gap-3 flex-wrap'>
-                    <Link to={`/details2/${item._id}`}>
-                      <button className={`btn px-2 border-2 bg-transparent border-[#B18B5E] text-black hover:bg-[#B18B5E] hover:text-white  hover:border-[#B18B5E] ${dark ? 'text-white' : 'text-black'}`}>View Details</button>
-                    </Link>
-                    <div onClick={() => getCarftData(item._id)}>
-                      <button className={`btn px-2 border-2 bg-transparent border-[#B18B5E] text-black hover:bg-[#B18B5E] hover:text-white  hover:border-[#B18B5E] ${dark ? 'text-white' : 'text-black'}`}>Update</button>
-                    </div>
-                    <div onClick={() => handleDelete(item._id)}>
-                      <button className={`btn px-2 border-2 bg-transparent border-red-600 text-black hover:bg-red-600 hover:text-white hover:border-red-600  ${dark ? 'text-white' : 'text-black'}`}>Delete</button>
+        <div className='flex items-center justify-center flex-col'>
+          <h1>Filter Craft by Customization</h1>
+          <div className="mb-2 flex items-center gap-3 my-5">
+            <select className='border-2 bg-transparent mb-2 p-2 rounded-lg px-10 ' name='customization' value={filter} onChange={e => setFilter(e.target.value)}>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div>
+        {
+          loading ?
+            <div className="container flex items-center justify-center">
+              <span className="loading loading-spinner loading-lg"></span>
+            </div>
+            :
+            <div className='md:px-20 lg:justify-start justify-center flex flex-wrap gap-10 '>
+              {allData.map(item => {
+                return (
+                  <div className='flex flex-col lg:flex-row flex-wrap gap-10 mb-5 w-fit border-2 rounded-xl md:px-10 px-8 py-10  items-center '>
+                    <img src={item.image} className='w-60  rounded-xl' />
+                    <div className='md:border-l-2 pl-5 border-dashed'>
+                      <h1 className='text-2xl font-semibold mb-2'>{item.item_name}</h1>
+                      <h2 className='mb-2'>Subcategory: <span className='font-semibold'>{item.subcategory_name}</span></h2>
+                      <h3>Rating: <span className='font-semibold'>{item.rating}</span></h3>
+                      <h3 className='mb-2'>Price: <span className='font-semibold'>{item.price}$</span></h3>
+                      <div className='flex gap-3 flex-wrap'>
+                        <Link to={`/details2/${item._id}`}>
+                          <button className={`btn px-2 border-2 bg-transparent border-[#B18B5E] text-black hover:bg-[#B18B5E] hover:text-white  hover:border-[#B18B5E] ${dark ? 'text-white' : 'text-black'}`}>View Details</button>
+                        </Link>
+                        <div onClick={() => updateCarftData(item._id)}>
+                          <button className={`btn px-2 border-2 bg-transparent border-[#B18B5E] text-black hover:bg-[#B18B5E] hover:text-white  hover:border-[#B18B5E] ${dark ? 'text-white' : 'text-black'}`}>Update</button>
+                        </div>
+                        <div onClick={() => handleDelete(item._id)}>
+                          <button className={`btn px-2 border-2 bg-transparent border-red-600 text-black hover:bg-red-600 hover:text-white hover:border-red-600  ${dark ? 'text-white' : 'text-black'}`}>Delete</button>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-            )
-          })}
-        </div>
+                )
+              })}
+            </div>
+        }
       </div>
 
       {/* update data */}

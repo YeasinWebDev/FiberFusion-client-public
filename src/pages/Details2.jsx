@@ -39,12 +39,14 @@ function Details2() {
                         <h1 className='font-normal text-xl pb-3'>rating:</h1>
                         <h1 className='font-normal text-xl pb-3'>stock Status:</h1>
                         <h1 className='font-normal text-xl pb-3'>Price:</h1>
+                        <h1 className='font-normal text-xl pb-3'>customization:</h1>
                     </div>
                     <div>
                         <h1 className='font-semibold text-xl pb-3'>"{details.processing_time}"</h1>
                         <h1 className='font-semibold text-xl pb-3'>"{details.rating}"</h1>
                         <h1 className='font-semibold text-xl pb-3'>"{details.stock_status}"</h1>
                         <h1 className='font-semibold text-xl pb-3'>"{details.price}" $</h1>
+                        <h1 className='font-semibold text-xl pb-3'>"{details.customization}"</h1>
                     </div>
                 </div>
             </div>

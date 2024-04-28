@@ -5,24 +5,33 @@ import { AuthContext } from '../provider/ContextProvider';
 
 function CraftItems() {
   const [data, setdata] = useState([])
+  const [loading, setloading] = useState(true)
   useEffect(() => {
+    setloading(true)
     axios.get('http://localhost:8300/art-1')
-      .then(res => setdata(res.data))
+      .then(res => setdata(res.data),setloading(false))
   }, [])
-  const {dark} = useContext(AuthContext)
+  const { dark } = useContext(AuthContext)
   return (
-    <div className='px-32 flex flex-col justify-center'>
+    <div className='px-32 flex flex-col justify-center relative'>
       <div className='mt-5 mb-20'>
         <h1 className={`flex items-center justify-center text-center whitespace-nowrap text-3xl md:text-4xl font-semibold ${dark ? 'text-white' : 'text-black'}`}>Crafty Creations</h1>
-        <div className='w-full h-fit flex flex-wrap mt-10 gap-8 items-center justify-center'>
-          {
-            data.map((item, index) => {
-              return (
-                <Product key={index} i={index} data={item} />
-              )
-            })
-          }
-        </div>
+        {
+          loading ?
+            <div className="absolute text-black flex items-center w-full pr-10 justify-center">
+              <span className="loading loading-spinner loading-lg"></span>
+            </div>
+            :
+            <div className='w-full h-fit flex flex-wrap mt-10 gap-8 items-center justify-center'>
+              {
+                data.map((item, index) => {
+                  return (
+                    <Product key={index} i={index} data={item} />
+                  )
+                })
+              }
+            </div>
+        }
       </div>
     </div>
   )

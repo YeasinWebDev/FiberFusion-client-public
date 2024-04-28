@@ -38,7 +38,6 @@ function AddCraft() {
             stock_status
         }
 
-        console.log(data);
 
      axios.post('http://localhost:8300/art-2', data)
      .then(res => {
