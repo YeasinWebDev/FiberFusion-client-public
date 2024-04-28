@@ -26,7 +26,6 @@ function AllArt() {
   }, [user.email, load]);
 
   const handleDelete = (e, id) => {
-    e.prventDefalt()
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this Art!",
@@ -60,7 +59,6 @@ function AllArt() {
         setPopup(true)
       })
   }
-  console.log(itemData)
 
   const handleUpdateItem = (e) => {
     e.preventDefault()

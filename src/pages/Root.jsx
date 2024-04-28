@@ -8,7 +8,7 @@ function Root() {
   return (
     <div>
       <Nav />
-      <div className={`${dark ? 'bg-[#28282A]  overflow-y-hidden' : 'bg-[#F8F5F0] '}`}>
+      <div className={`${dark ? 'bg-[#28282A]  overflow-y-hidden min-h-screen' : 'bg-[#F8F5F0] min-h-screen'}`}>
         <Outlet />
       </div>
     </div>

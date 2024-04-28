@@ -15,7 +15,7 @@ function AllArt() {
 
   return (
     <div>
-      <div className={`${dark ? 'text-white' : 'text-black'} h-full`}>
+      <div className={`${dark ? 'text-white' : 'text-black'} min-h-screen`}>
         <h1 className='text-4xl font-semibold mb-5 text-[#B18B5E] flex items-center justify-center py-10'>All Art And Craft</h1>
         <div className='md:px-20 lg:justify-start justify-center flex flex-wrap gap-10'>
           {allData.map(item => {

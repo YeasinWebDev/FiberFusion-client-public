@@ -10,7 +10,6 @@ function CraftItems() {
       .then(res => setdata(res.data))
   }, [])
   const {dark} = useContext(AuthContext)
-  console.log(data);
   return (
     <div className='px-32 flex flex-col justify-center'>
       <div className='mt-5 mb-20'>
