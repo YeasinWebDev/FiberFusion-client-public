@@ -9,7 +9,7 @@ function CraftItems() {
   const [loading, setloading] = useState(true)
   useEffect(() => {
     setloading(true)
-    axios.get('http://localhost:8300/art-1')
+    axios.get('https://a10-server-psi.vercel.app/art-1')
       .then(res => setdata(res.data),setloading(false))
   }, [])
   const { dark } = useContext(AuthContext)

@@ -6,6 +6,7 @@ import Swal from 'sweetalert2'
 import AOS from 'aos';
 import { toast } from 'react-toastify'
 import { Fade } from 'react-awesome-reveal'
+import { Helmet } from "react-helmet";
 
 function AllArt() {
   const [allData, setAllData] = useState([])
@@ -24,9 +25,9 @@ function AllArt() {
 
   const fetchData = () => {
     setloading(true)
-    let url = `http://localhost:8300/art-2?email=${user.email}`
+    let url = `https://a10-server-psi.vercel.app/art-2?email=${user.email}`
     if (filter) {
-      url = `http://localhost:8300/art-2?email=${user.email}&filter=${filter}`
+      url = `https://a10-server-psi.vercel.app/art-2?email=${user.email}&filter=${filter}`
     }
     axios.get(url)
       .then(res => {
@@ -51,7 +52,7 @@ function AllArt() {
       confirmButtonText: "Yes, delete it!"
     }).then((result) => {
       if (result.isConfirmed) {
-        axios.delete(`http://localhost:8300/art-2/${id}`)
+        axios.delete(`https://a10-server-psi.vercel.app/art-2/${id}`)
           .then(res => {
             setLoad(!load)
           })
@@ -68,7 +69,7 @@ function AllArt() {
 
 
   const updateCarftData = (id) => {
-    axios.get(`http://localhost:8300/art-2/${id}`)
+    axios.get(`https://a10-server-psi.vercel.app/art-2/${id}`)
       .then(res => {
         setItemData(res.data);
         setPopup(true)
@@ -104,7 +105,7 @@ function AllArt() {
       stock_status
     }
 
-    axios.put(`http://localhost:8300/art-2/${itemData._id}`, data)
+    axios.put(`https://a10-server-psi.vercel.app/art-2/${itemData._id}`, data)
       .then(res => {
         toast('Updated Successfully')
         setLoad(!load)
@@ -115,6 +116,9 @@ function AllArt() {
 
   return (
     <div className='relative min-h-screen w-full '>
+      <Helmet>
+        <title>My Art</title>
+      </Helmet>
       <div className={`${dark ? 'text-white' : 'text-black'} `}>
         <h1 className='text-4xl font-semibold mb-5 text-[#B18B5E] flex items-center justify-center py-10'><Fade cascade duration={200}>My Art And Craft</Fade></h1>
         <div className='flex items-center justify-center flex-col'>

@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { AuthContext } from '../provider/ContextProvider'
 import { Link } from 'react-router-dom'
 import { Fade } from 'react-awesome-reveal'
+import { Helmet } from "react-helmet";
 
 function AllArt() {
   const [allData, setAllData] = useState([])
@@ -10,7 +11,7 @@ function AllArt() {
   const [loading, setloading] = useState(true)
   useEffect(() => {
     setloading(true)
-    axios.get('http://localhost:8300/art-2?all=allData}')
+    axios.get('https://a10-server-psi.vercel.app/art-2?all=allData}')
       .then(res => {
         setAllData(res.data)
         setloading(false)
@@ -19,6 +20,9 @@ function AllArt() {
 
   return (
     <div>
+      <Helmet>
+        <title>All Art</title>
+      </Helmet>
       <div className={`${dark ? 'text-white' : 'text-black'} min-h-screen relative`}>
         <h1 className='text-4xl font-semibold mb-5 text-[#B18B5E] flex items-center justify-center py-10'><Fade cascade duration={200}>All Art And Craft</Fade></h1>
         <div className="md:px-20 lg:justify-start justify-center flex flex-wrap gap-10">
@@ -26,7 +30,7 @@ function AllArt() {
             {/* head */}
             <thead>
               <tr className={`${dark ? "text-white" : "text-black"} text-lg `}>
-                <th>Img</th>
+                <th className='hidden md:block'>Img</th>
                 <th>Name</th>
                 <th>Price</th>
                 <th>rating</th>
@@ -43,12 +47,12 @@ function AllArt() {
                   {allData.map((item, index) => {
                     return (
                       <tr key={index}>
-                        <td className='w-48'>
+                        <td className='w-48 hidden md:block'>
                           <img className='rounded-xl' src={item.image} alt="" />
                         </td>
-                        <td className='text-xl font-semibold'>{item.item_name}</td>
-                        <td className='text-xl font-semibold'>{item.price}$</td>
-                        <td className='text-xl font-semibold'>{item.rating}</td>
+                        <td className='text-lg md:text-xl font-semibold'>{item.item_name}</td>
+                        <td className='text-lg md:text-xl font-semibold'>{item.price}$</td>
+                        <td className='text-lg md:text-xl font-semibold'>{item.rating}</td>
                         <td>
                           <Link to={`/details2/${item._id}`}>
                             <button onClick={() => setDetailsValue(false)} className={`btn px-2 border-2 bg-transparent border-[#B18B5E] text-black hover:bg-[#B18B5E] hover:text-white hover:bg-none hover:border-none ${dark ? 'text-white' : 'text-black'}`}>View Details</button>

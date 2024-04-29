@@ -8,7 +8,7 @@ function SubCategory() {
   const { dark, setSubCategoryName } = useContext(AuthContext)
   const [data, setData] = useState([])
   useEffect(() => {
-    axios.get('http://localhost:8300/art-1')
+    axios.get('https://a10-server-psi.vercel.app/art-1')
       .then(res => setData(res.data))
   }, [])
   return (
@@ -20,8 +20,8 @@ function SubCategory() {
         {
           data.map(item => {
             return (
-              <Link to='/subCategoryItem'>
-                <div onClick={() => setSubCategoryName(item.subcategory_name)} className="relative md:w-96 w-80 image-full cursor-pointer">
+              <Link to={`/subCategoryItem/${item.subcategory_name}`}>
+                <div className="relative md:w-96 w-80 image-full cursor-pointer">
                   <figure><img className='brightness-75 rounded-2xl' src={item.image} alt="dataimg" /></figure>
                   <div className="card-body flex items-center justify-center absolute z-10 top-0 text-white my-auto">
                     <h2 className="text-2xl font-semibold pt-10">{item.subcategory_name}</h2>

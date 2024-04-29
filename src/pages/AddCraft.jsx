@@ -4,6 +4,7 @@ import { AuthContext } from '../provider/ContextProvider';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { Fade } from 'react-awesome-reveal';
+import { Helmet } from "react-helmet";
 function AddCraft() {
 
     const { user,dark } = useContext(AuthContext)
@@ -40,7 +41,7 @@ function AddCraft() {
         }
 
             // art-2
-     axios.post('http://localhost:8300/subCategory', data)
+     axios.post('https://a10-server-psi.vercel.app/subCategory', data)
      .then(res => {
         if(res.data.insertedId){
             toast("Art Data Added successfully")
@@ -53,6 +54,9 @@ function AddCraft() {
 
     return (
         <div>
+            <Helmet>
+                <title>Add Craft</title>
+            </Helmet>
             <div className={`flex flex-col items-center justify-center py-20 ${dark ? 'text-white' : 'text-black'}`}>
                 <h2 className='text-4xl font-semibold mb-5 text-[#B18B5E]'><Fade cascade duration={200}>Add New Craft Item</Fade></h2>
                 <form onSubmit={handleAddItem} className='w-full justify-center gap-10 flex relative  flex-wrap'>

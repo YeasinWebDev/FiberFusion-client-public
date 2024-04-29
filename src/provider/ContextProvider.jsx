@@ -53,7 +53,7 @@ function ContextProvider({ children }) {
 
 
 
-    const authinfo = { user, setUser, createUser, signIn, LogOut, logInByGoogle, loading, setloading, logInByGithub, dark, setDark,subCategoryName,setSubCategoryName,detailsValue,setDetailsValue }
+    const authinfo = { user, setUser, createUser, signIn, LogOut, logInByGoogle, loading, setloading, logInByGithub, dark, setDark,detailsValue,setDetailsValue }
     return (
         <AuthContext.Provider value={authinfo}>
             {children}

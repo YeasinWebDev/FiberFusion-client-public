@@ -5,7 +5,7 @@ import { AuthContext } from '../provider/ContextProvider'
 import Footer from '../components/Footer'
 
 function Root() {
-  const { dark, setDark } = useContext(AuthContext)
+  const { dark } = useContext(AuthContext)
   return (
     <div>
       <Nav />

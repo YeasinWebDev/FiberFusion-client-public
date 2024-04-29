@@ -8,7 +8,7 @@ function Artisan() {
     const [data, setdata] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:8300/artists')
+        axios.get('https://a10-server-psi.vercel.app/artists')
             .then(res => {
                 setdata(res.data)
 

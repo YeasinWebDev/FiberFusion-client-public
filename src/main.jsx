@@ -62,7 +62,7 @@ const router = createBrowserRouter([
         element: <PrivateRoute><Details2 /></PrivateRoute>
       },
       {
-        path:'/subCategoryItem',
+        path:'/subCategoryItem/:name',
         element: <PrivateRoute><SubCategoryItem /></PrivateRoute>
       }
     ]
