@@ -18,6 +18,7 @@ FiberFusion is a textile-focused website that brings together a community of art
        * Beadwork
        * Tie-Dyeing
        * Macrame
+         
         These categories cater to every textile enthusiast's interest, providing a comprehensive platform for exploration.
    5. Responsive Design: Our website is designed to adapt seamlessly to various devices, ensuring a consistent and enjoyable browsing experience for users on desktops, tablets, and smartphones.
 
