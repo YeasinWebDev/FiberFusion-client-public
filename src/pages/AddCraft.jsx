@@ -41,7 +41,7 @@ function AddCraft() {
         }
 
             // art-2
-     axios.post('https://a10-server-psi.vercel.app/subCategory', data)
+     axios.post('https://a10-server-psi.vercel.app/art-2', data)
      .then(res => {
         if(res.data.insertedId){
             toast("Art Data Added successfully")
