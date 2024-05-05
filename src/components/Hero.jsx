@@ -20,7 +20,7 @@ export default function Hero() {
         AOS.init({ duration: 1000, offset: 200, });
     }, [])
     return (
-        <div data-aos="fade-up" data-aos-easing="ease-in-sine" className=' w-full mt-10'>
+        <div data-aos="fade-up" data-aos-easing="ease-in-sine" className=' w-full pt-10'>
             <Swiper
                 spaceBetween={30}
                 centeredSlides={true}
