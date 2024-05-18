@@ -21,11 +21,10 @@ function SubCategory() {
           data.map(item => {
             return (
               <Link to={`/subCategoryItem/${item.subcategory_name}`}>
-                <div className="relative md:w-96 w-80 image-full cursor-pointer">
-                  <figure><img className='brightness-75 rounded-2xl' src={item.image} alt="dataimg" /></figure>
-                  <div className="card-body flex items-center justify-center absolute z-10 top-0 text-white my-auto">
-                    <h2 className="text-2xl font-semibold pt-10">{item.subcategory_name}</h2>
-                    <p className='text-center text-sm'>{item.short_des}</p>
+                <div className={`md:w-96 w-80 image-full cursor-pointer p-5 rounded-xl ${dark? 'bg-[#120D0D] text-white' : 'bg-transparent text-black'}`}>
+                  <figure><img className=' rounded-2xl' src={item.image} alt="dataimg" /></figure>
+                  <div className="flex flex-col items-center justify-center  z-10 top-0 text-white my-auto">
+                    <h2 className={`text-2xl font-semibold pt-5 ${dark ? 'text-white' : 'text-black'}`}>{item.subcategory_name}</h2>
                   </div>
                 </div>
               </Link>

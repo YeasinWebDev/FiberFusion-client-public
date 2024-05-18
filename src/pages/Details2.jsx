@@ -39,7 +39,7 @@ function Details2() {
                     </div>
                     :
                     <>
-                        <div className="img md:w-[40vh] w-[30vh] px-2 md:px-0 rounded-xl flex items-center">
+                        <div className="img md:w-[30vh] w-[30vh] px-2 md:px-0 rounded-xl flex items-center">
                             <img className='rounded-xl' src={details.image} alt="" />
                         </div>
 

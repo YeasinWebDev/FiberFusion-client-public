@@ -20,8 +20,10 @@ export default function App() {
         formState: { errors },
     } = useForm()
 
-    const { signIn, logInByGoogle, logInByGithub ,dark ,setdark } = useContext(AuthContext)
-
+    const { signIn, logInByGoogle, logInByGithub ,dark, user } = useContext(AuthContext)
+    if(user) {
+        return navigate('/')
+    }
 
     const onSubmit = (data) => {
         signIn(data.email, data.password)

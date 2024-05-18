@@ -9,7 +9,7 @@ function Footer() {
         <div>
             <footer className={`footer footer-center p-10 text-primary-content ${dark ? 'bg-[#1a1818] text-white' : 'bg-[#E6E2E2] text-black'}`}>
 
-                <div className={`flex flex-wrap gap-10 items-center justify-center ${dark ? ' text-white' : 'text-black'} border-b-2 border-dashed pb-5 border-black`}>
+                {/* <div className={`flex flex-wrap gap-10 items-center justify-center ${dark ? ' text-white' : 'text-black'} border-b-2 border-dashed pb-5 border-black`}>
                     <div>
                         <h1 className='text-xl mb-2 font-semibold'>Contact us</h1>
                         <h1 className='font-semibold'>Email: info@fiberfusion.com</h1>
@@ -23,7 +23,7 @@ function Footer() {
                             <FaFacebookF className="mr-2" />
                         </div>
                     </div>
-                </div>
+                </div> */}
                 <aside className={`${dark ? ' text-white' : 'text-black'}`}>
                     <p className="font-bold">
                         FiberFusion <br />Delivering cutting-edge solutions since 1992

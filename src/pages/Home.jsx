@@ -14,9 +14,9 @@ function Home() {
       </Helmet>
       <Hero/>
       <CraftItems/>
+      <SubCategory/>
       <Artisan/>
       <Resources/>
-      <SubCategory/>
     </div>
   )
 }

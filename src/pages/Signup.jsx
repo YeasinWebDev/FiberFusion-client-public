@@ -18,7 +18,10 @@ function Signup() {
         formState: { errors },
     } = useForm()
     const { logInByGoogle, createUser, logInByGithub, setUser, user,dark } = useContext(AuthContext)
-
+    useContext(AuthContext)
+    if(user) {
+        return navigate('/')
+    }
     const onSubmit = (data) => {
         const { email, password } = data;
 

@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { Link, Navigate } from 'react-router-dom';
 import { AuthContext } from '../provider/ContextProvider';
 import axios from 'axios';
 import { toast } from 'react-toastify';

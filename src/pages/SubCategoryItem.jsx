@@ -28,7 +28,7 @@ function SubCategoryItem() {
       <div className={`md:px-20 lg:justify-start justify-center flex flex-wrap gap-10  ${dark ? 'text-white' : 'text-black'}`}>
         {subcategoryData?.map(item => {
           return (
-            <div className='flex flex-col lg:flex-row flex-wrap gap-10 mb-5 w-fit border-2 rounded-xl md:px-10 px-8 py-10  items-center '>
+            <div className='flex flex-col lg:flex-row flex-wrap gap-10 mb-5 w-fit border-2 rounded-xl md:px-10 px-6 py-8 items-center'>
               <Helmet>
                 <title>{item.subcategory_name}</title>
               </Helmet>
