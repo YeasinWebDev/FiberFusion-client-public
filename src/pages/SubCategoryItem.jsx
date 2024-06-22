@@ -28,12 +28,12 @@ function SubCategoryItem() {
       <div className={`md:px-20 lg:justify-start justify-center flex flex-wrap gap-10  ${dark ? 'text-white' : 'text-black'}`}>
         {subcategoryData?.map(item => {
           return (
-            <div className='flex flex-col lg:flex-row flex-wrap gap-10 mb-5 w-fit border-2 rounded-xl md:px-10 px-6 py-8 items-center'>
+            <div key={item.item_name} className='flex flex-col lg:flex-row flex-wrap gap-10 mb-5 w-fit border-2 rounded-xl md:px-10 px-6 py-8 items-center'>
               <Helmet>
                 <title>{item.subcategory_name}</title>
               </Helmet>
               <img src={item.image} className='w-60  rounded-xl' />
-              <div className='md:border-l-2 pl-5 border-dashed'>
+              <div className='lg:border-l-2 pl-5 border-dashed'>
                 <h1 className='text-2xl font-semibold mb-2'>{item.item_name}</h1>
                 <h2 className='mb-2'>Subcategory: <span className='font-semibold'>{item.subcategory_name}</span></h2>
                 <h3>Rating: <span className='font-semibold'>{item.rating}</span></h3>

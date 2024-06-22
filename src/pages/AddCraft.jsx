@@ -7,7 +7,6 @@ import { Helmet } from "react-helmet";
 function AddCraft() {
 
     const { user,dark } = useContext(AuthContext)
-    console.log(user)
 
     const handleAddItem = (e) => {
         e.preventDefault()
@@ -60,25 +59,25 @@ function AddCraft() {
                 <h2 className='text-4xl font-semibold mb-5 text-[#B18B5E]'><Fade cascade duration={200}>Add New Craft Item</Fade></h2>
                 <form onSubmit={handleAddItem} className='w-full justify-center gap-10 flex relative  flex-wrap'>
                     <div>
-                        <input className=' border-2 bg-transparent mb-5 p-2 rounded-lg px-10 py-5' type="text" name='user_name' placeholder='Your Name' defaultValue={user.displayName} />
+                        <input required className=' border-2 bg-transparent mb-5 p-2 rounded-lg px-10 py-5' type="text" name='user_name' placeholder='Your Name' defaultValue={user.displayName} />
                         <br />
-                        <input className=' border-2 bg-transparent mb-5 p-2 rounded-lg px-10 py-5' type="email" name='user_email' placeholder='Your Email' defaultValue={user.email}/>
+                        <input required className=' border-2 bg-transparent mb-5 p-2 rounded-lg px-10 py-5' type="email" name='user_email' placeholder='Your Email' defaultValue={user.email}/>
                         <br />
-                        <input className=' border-2 bg-transparent mb-5 p-2 rounded-lg px-10 py-5' type="text" name='image' placeholder='Image URL' />
+                        <input required className=' border-2 bg-transparent mb-5 p-2 rounded-lg px-10 py-5' type="text" name='image' placeholder='Image URL' />
                         <br />
-                        <input className=' border-2 bg-transparent mb-5 p-2 rounded-lg px-10 py-5' type="text" name='item_name' placeholder='Item Name' />
+                        <input required className=' border-2 bg-transparent mb-5 p-2 rounded-lg px-10 py-5' type="text" name='item_name' placeholder='Item Name' />
                         <br />
-                        <input className=' border-2 bg-transparent mb-5 p-2 rounded-lg px-10 py-5' type="text" name='subcategory_name' placeholder='Subcategory Name' />
+                        <input required className=' border-2 bg-transparent mb-5 p-2 rounded-lg px-10 py-5' type="text" name='subcategory_name' placeholder='Subcategory Name' />
                         <br />
                         <textarea className='border-2 bg-transparent mb-2 p-2 rounded-lg px-10 py-5' name='short_des' placeholder='Short Description' />
                         <br />
                     </div>
                     <div>
-                        <input className=' border-2 bg-transparent mb-5 p-2 rounded-lg px-10 py-5' type="text" name='price' placeholder='Price' />
+                        <input required className=' border-2 bg-transparent mb-5 p-2 rounded-lg px-10 py-5' type="text" name='price' placeholder='Price' />
                         <br />
-                        <input className='border-2 bg-transparent mb-2 p-2 rounded-lg px-10 py-5' type="text" name='rating' placeholder='Rating' />
+                        <input required className='border-2 bg-transparent mb-2 p-2 rounded-lg px-10 py-5' type="text" name='rating' placeholder='Rating' />
                         <br />
-                        <input className=' border-2 bg-transparent mb-5 p-2 rounded-lg px-10 py-5' type="text" name='processing_time' placeholder='Processing Time' />
+                        <input required className=' border-2 bg-transparent mb-5 p-2 rounded-lg px-10 py-5' type="text" name='processing_time' placeholder='Processing Time' />
                         <br />
                         <div className="mb-2 flex items-center gap-3">
                             <label className={`block  text-sm font-bold mb-2 ${dark? 'text-white': 'text-gray-700'}`} htmlFor="customization">
@@ -102,7 +101,7 @@ function AddCraft() {
                         </div>
                     </div>
 
-                    <input className=' border-2 px-6 py-3 bg-transparent rounded-xl absolute bottom-[-70px]' type="submit" value="Add" />
+                    <input required className=' border-2 px-6 py-3 bg-transparent rounded-xl absolute bottom-[-70px]' type="submit" value="Add" />
                 </form>
             </div>
         </div>

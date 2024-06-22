@@ -26,13 +26,13 @@ function Nav({key}) {
         LogOut()
     }
     return (
-        <div className={`navbar ${dark ? 'bg-[#120d0d] text-white  py-3' : "bg-[#e6e2e2] text-black py-3"}`}>
-            <div className="navbar-start">
-                <div className="dropdown">
+        <div className={`navbar z-50 ${dark ? 'bg-[#120d0d] text-white  py-3' : "bg-[#e6e2e2] text-black py-3"} fixed w-full`}>
+            <div className="navbar-start z-50">
+                <div className="dropdown z-50">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </div>
-                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-50 p-2 shadow bg-[#f2f2f2] text-lg rounded-box w-52">
+                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-50 p-2 shadow bg-[#E6E2E2] text-lg rounded-box w-52">
                         <NavLink  to={'/'} className={({ isActive }) => isActive ? "bg-[#B18B5E] p-[14px] rounded-xl text-white whitespace-nowrap" : "p-[14px] whitespace-nowrap"}>Home</NavLink>
                         <NavLink  to={'/all-Art'} className={({ isActive }) => isActive ? "bg-[#B18B5E] p-[14px] rounded-xl text-white whitespace-nowrap" : "p-[14px] whitespace-nowrap"}>All Art</NavLink>
                         <NavLink  to={'/addCraft'} className={({ isActive }) => isActive ? "bg-[#B18B5E] p-[14px] rounded-xl text-white whitespace-nowrap" : "p-[14px] whitespace-nowrap"}>Add Craft</NavLink>
@@ -41,7 +41,7 @@ function Nav({key}) {
                 </div>
                 <div className="btn btn-ghost text-xl">
                     <div className='md:w-fit flex  items-center gap-3 overflow-hidden'>
-                        <span className='title md:text-4xl text-xl font-semibold'>FiberFusion</span>
+                       <Link to={'/'}> <span className='title md:text-4xl text-xl font-semibold'>FiberFusion</span></Link>
                     </div>
                 </div>
             </div>

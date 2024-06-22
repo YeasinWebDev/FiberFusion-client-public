@@ -51,7 +51,7 @@ function Root() {
       </div>
       <div className='main bg-[#F8F5F0] hidden'>
         <Nav  key={isLoaded}/>
-        <div className={`${dark ? 'bg-[#171212]  overflow-y-hidden min-h-screen' : 'bg-[#F8F5F0] min-h-screen'}`}>
+        <div className={`${dark ? 'bg-[#171212]  overflow-y-hidden min-h-screen' : 'bg-[#F8F5F0] min-h-screen'} pt-16`}>
           <Outlet key={isLoaded} />
         </div>
         <Footer />
