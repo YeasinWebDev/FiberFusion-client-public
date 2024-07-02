@@ -41,19 +41,19 @@ FiberFusion is a textile-focused website that brings together a community of art
         *Open your terminal (or Git Bash on Windows).
         *Navigate to the directory where you want to clone the project.
         *Run the following command to clone the repository:
-           ```ts
+           ```
               git clone https://github.com/YeasinWebDev/a10-client-public.git
            ```
 
    2. ### Navigate to the Project Directory:
        *Change into the project directory:
-         ```ts
+          ```
               cd a10-client-public
           ```
 
    3. ### Install Dependencies:
        *Once inside the project directory, install the necessary dependencies:
-            ```ts
+            ```
               npm install
             ```
    4. ### Set Up Firebase Credentials :
@@ -61,6 +61,6 @@ FiberFusion is a textile-focused website that brings together a community of art
 
    5. ### Start the Development Server:
        *After installing dependencies, start the development server:
-            ```ts
+            ```
               npm start
             ```
