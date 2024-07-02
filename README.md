@@ -20,7 +20,6 @@ FiberFusion is a textile-focused website that brings together a community of art
        * Macrame
          
         These categories cater to every textile enthusiast's interest, providing a comprehensive platform for exploration.
-   5. Responsive Design: Our website is designed to adapt seamlessly to various devices, ensuring a consistent and enjoyable browsing experience for users on desktops, tablets, and smartphones.
 
 ## Additional Functionality
 
@@ -35,3 +34,33 @@ FiberFusion is a textile-focused website that brings together a community of art
    * Express.js
    * React-tooltip
    * React Awesome Reveal
+
+## Clone and Run FiberFusion Locally
+
+  1. ### Clone the Repository:
+        *Open your terminal (or Git Bash on Windows).
+        *Navigate to the directory where you want to clone the project.
+        *Run the following command to clone the repository:
+           ```ts
+              git clone https://github.com/YeasinWebDev/a10-client-public.git
+           ```
+
+   2. ### Navigate to the Project Directory:
+       *Change into the project directory:
+         ```ts
+              cd a10-client-public
+          ```
+
+   3. ### Install Dependencies:
+       *Once inside the project directory, install the necessary dependencies:
+            ```ts
+              npm install
+            ```
+   4. ### Set Up Firebase Credentials :
+      *You would create a .env file at the root of your project and add your Firebase       configuration variables there.
+
+   5. ### Start the Development Server:
+       *After installing dependencies, start the development server:
+            ```ts
+              npm start
+            ```
