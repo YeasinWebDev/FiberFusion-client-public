@@ -9,10 +9,10 @@ FiberFusion is a textile-focused website that brings together a community of art
 
 ## Features
 
-   1. ###User Authentication: Utilizing Firebase, we ensure secure user authentication for a personalized experience.
-   2. ###Crafty Creations: Explore our Crafty Creations section where we proudly exhibit our arts, showcasing the creativity and talent of our community members.
-   3. ###Artisan Spotlight: Discover the Artisan Spotlight section, where we highlight the work of exceptional artisans, offering insight into their inspiration and techniques.
-   4. ###Subcategory Section: Dive into our diverse range of subcategories, including:
+   1. User Authentication: Utilizing Firebase, we ensure secure user authentication for a personalized experience.
+   2. Crafty Creations: Explore our Crafty Creations section where we proudly exhibit our arts, showcasing the creativity and talent of our community members.
+   3. Artisan Spotlight: Discover the Artisan Spotlight section, where we highlight the work of exceptional artisans, offering insight into their inspiration and techniques.
+   4. Subcategory Section: Dive into our diverse range of subcategories, including:
        * Embroidery
        * Knitting & Crocheting
        * Quilting
